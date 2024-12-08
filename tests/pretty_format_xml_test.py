@@ -1,6 +1,10 @@
 from __future__ import annotations
 
+import pytest
+
+from pre_commit_hooks.pretty_format_xml import main
 from pre_commit_hooks.pretty_format_xml import pretty_format_xml
+from testing.util import get_resource_path
 
 
 def test_simple_xml():
@@ -82,3 +86,13 @@ def test_doctype():
 </html>"""
     )
     assert result == expected
+
+
+@pytest.mark.parametrize(
+    ('filename', 'expected_retval'), (
+        ('pretty_formatted_xml.xml', 0),
+    ),
+)
+def test_unsorted_main(filename, expected_retval):
+    ret = main([get_resource_path(filename)])
+    assert ret == expected_retval
