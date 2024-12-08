@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alltests>
+	<!-- Comments test -->
+	<comments>
+		<!-- Comment -->
+		<root>
+			<child>text</child>
+		</root>
+	</comments>
+	<!-- Simple XML test -->
+	<simple>
+		<root>
+			<child>
+				<subchild>value</subchild>
+			</child>
+		</root>
+	</simple>
+	<!-- Self-closing tags test -->
+	<selfclosing>
+		<root>
+			<child />
+			<child>text</child>
+		</root>
+	</selfclosing>
+	<!-- CDATA test -->
+	<cdata>
+		<root>
+			<![CDATA[some <xml> content]]>
+			<child>text</child>
+		</root>
+	</cdata>
+	<!-- Namespaces test -->
+	<namespaces>
+		<root
+			xmlns:x="http://example.com">
+			<x:child>namespaced</x:child>
+		</root>
+	</namespaces>
+</all-tests>
